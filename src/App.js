@@ -29,7 +29,6 @@ function App() {
   return (
     <svg width={width} height={height} >
       <Datos />
-
     </svg>
   );
 }
