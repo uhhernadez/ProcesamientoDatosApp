@@ -1,9 +1,15 @@
+import { useState, useEffect } from 'react';
+import * as d3 from 'd3'
 
 const csvUrl = 'db/Casos_Diarios_Municipio_Confirmados_20220407.csv';
 
-const DescargarDatos = () => {
+export const DescargarDatos = () => {
   const [datos, actualizaDatos ] = useState(null); 
   useEffect(() => {
+    fetchData();
+  }, []); 
+
+  const fetchData = () => {
     d3.csv(csvUrl).then(data => {
       let casos_diarios = [ ];
       console.log(data[752].nombre);
@@ -12,6 +18,7 @@ const DescargarDatos = () => {
       }
       actualizaDatos(casos_diarios);
     });
-  }, []); 
+  }
 
+  return datos;  
 }
