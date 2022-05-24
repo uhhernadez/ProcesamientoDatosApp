@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { DescargarDatos } from './datos';
+import { DescargarDatos, DescargarDatosFC } from './datos';
 import * as d3 from 'd3';
+import { LineaTiempo } from './graficaTiempo';
 
-const width = 500;
+const width = 800;
 const height = 500;
 
 
@@ -13,8 +14,10 @@ const linea = d3.line()
   return (<path d={linea(datos)} strokeWidth={1} fill="none" stroke="red" />);        
 };
 
+/*
 function App() {
   const datos = DescargarDatos();  
+  const d = DescargarDatosFC();  
   
   if(!datos) {
     return (
@@ -29,5 +32,26 @@ function App() {
     </svg>
   );
 }
+*/
+
+
+function App() {
+  const d = DescargarDatosFC();  
+
+  if(!d) {
+    return (
+    <div>
+      Loading..
+    </div>
+    );
+  }
+  
+  return (
+    <div>
+      <LineaTiempo data={d} width={width} height={height}/>
+    </div>
+  );
+}
+
 
 export default App;
