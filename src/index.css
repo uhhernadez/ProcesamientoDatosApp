@@ -7,6 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.font-raleway {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.img-style {
+  width: '30%'; 
+  border-radius: 50%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
